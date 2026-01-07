@@ -1,31 +1,3 @@
-Haklısınız, önceki kodda "Tek grup/Kontrol grubu" tartışması yaparken bazı parametreleri (demografik detaylar, mide bulantısı vb.) sadeleştirmiştim.
-
-Şimdi, projenin TÜBİTAK 1002 Araştırma Protokolüne tam uygun, eksiksiz, "Her Şey Dahil" (All-in-One) versiyonunu hazırladım.
-
-Bu kodda şunların hepsi var:
-
-Demografik Veriler: Yaş, Cinsiyet, Eğitim, Kaçıncı Kür, Dominant El.
-
-Ön Testler: Yorgunluk, Kaygı ve Mide Bulantısı.
-
-Hexad ve Melez Profil: Puanlar yakınsa iki profili birleştiren zeka.
-
-Oyun Veritabanı: 30 oyunluk tam liste (Resimli, Açıklamalı, OT Notlu).
-
-Son Testler: Son Kaygı, Zaman Algısı ve 9 Maddelik Akış (Flow) Ölçeği.
-
-Google Sheets Kaydı: Hepsini tek satırda kaydeder.
-
-ADIM 1: Önce Google Sheets Başlıklarını Düzeltin
-Google E-Tablonuzun (Onko-Data) 1. satırını tamamen silin ve şu başlıkları sırasıyla kopyalayıp yapıştırın (Sıralama kodla aynı olmalı):
-
-Tarih | Protokol | Yas | Cinsiyet | Egitim | Kemo_Kur | Profil | On_Yorgunluk | On_Kaygi | On_Bulanti | Son_Kaygi | Zaman_Algisi | Flow_Toplam
-
-ADIM 2: İşte Eksiksiz Final Kod (app.py)
-Eski kodun tamamını silin ve bunu yapıştırın.
-
-Python
-
 import streamlit as st
 import pandas as pd
 import gspread
@@ -285,3 +257,4 @@ if 'analysis_done' in st.session_state:
                     st.error(f"Kayıt Hatası: {e}")
             else:
                 st.error("Veritabanı bağlantısı yok! Demo modundasınız.")
+                
